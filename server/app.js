@@ -5,10 +5,50 @@ const app = express();
 app.use(express.json());
 
 /**
- *  IMPORTANT: Scroll down to skip the Advanced Bonus phases.
+ *  Basic Phase 1 - Plain-text response
+ *     Method: GET
+ *     Route: /version
+ *     Response: 1.0.0
+ */
+// Your code here
+
+/**
+ *  Basic Phase 2 - Route param and JSON response
+ *      Method: GET
+ *      Route: /viewers
+ *      Route Parameter: id
+ *      Response: JSON containing user object with id, first name, last name,
+ *                birthdate and list of favorite movies
  *
- *  Do the basic and intermediate phases first. You can return to the
- *  bonus phases later for extra practice during assessment preparation.
+ *  Hint: Use your name, birthdate and favorite movies (as strings in the code)
+ *  combined with the id sent as a route parameter in the url
+ */
+// Your code here
+
+/** Basic Phase 3 - Query params in URL
+ *      Method: GET
+ *      Route: /info
+ *      Request: message
+ *      Response: message (reflected back to the user)
+ *      Error Handling: If "message" is missing from the query string,
+ *                      then respond with "message required"
+ *
+ *      Sample routes:
+ *          /info?message=Hello, world!
+ *          /info?message=
+ *          /info
+ *      Sample responses, respectively (as seen in the browser):
+ *          Hello, world!
+ *          message required
+ *          message required
+ */
+// Your code here
+
+/**
+ *  IMPORTANT: Scroll to the top for basic phases.
+ *
+ *  Do the basic phases first. You can return to the bonus phases later for
+ *  extra practice during assessment preparation.
  */
 
 /**
@@ -55,69 +95,6 @@ app.use(express.json());
  */
 // Your code here
 
-/**
- *  Basic Phase 1 - Plain-text response
- *     Method: GET
- *     Route: /version
- *     Response: 1.0.0
- */
-// Your code here
-
-/**
- *  Basic Phase 2 - Route param and JSON response
- *      Method: GET
- *      Route: /viewers
- *      Route Parameter: id
- *      Response: JSON containing user object with id, first name, last name,
- *                birthdate and list of favorite movies
- *
- *  Hint: Use your name, birthdate and favorite movies (as strings in the code)
- *  combined with the id sent as a route parameter in the url
- */
-// Your code here
-
-/** Basic Phase 3 - Query params in URL
- *      Method: GET
- *      Route: /info
- *      Request: message
- *      Response: message (reflected back to the user)
- *      Error Handling: If "message" is missing from the query string,
- *                      then respond with "message required"
- *
- *      Sample routes:
- *          /info?message=Hello, world!
- *          /info?message=
- *          /info
- *      Sample responses, respectively (as seen in the browser):
- *          Hello, world!
- *          message required
- *          message required
- */
-// Your code here
-
-/**
- *  Intermediate Phase 4 - Custom message and HTTP status code
- *                         when route is not found
- *
- *      Use your researching skills, to determine how to return a
- *      custom message when an unknown path is entered by the user
- *      in the browser's address bar.
- *
- *      Hint: What is the HTTP error code for 'Not Found'?
- *
- *      Reference: https://expressjs.com/en/starter/faq.html (search for 404)
- *
- *      Method: All
- *      Route: Any (not specified above), e.g. /nowhere
- *      Status: 404 Not Found
- *      Response: "Not supported"
- */
-// Your code here
-
-/**
- * Scroll to top for Advanced Bonus Phases
- */
-
 // DO NOT EDIT - Set port and listener
 const port = 5000;
-app.listen(port, () => `Server is listening on port ${port}.`);
+app.listen(port, () => console.log('Server is listening on port', port));
