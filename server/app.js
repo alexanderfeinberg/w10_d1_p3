@@ -57,10 +57,10 @@ app.get('/viewers/:id', (req, res)=>{
  */
 // Your code here
 app.get('/info', (req, res)=>{
-    try{
-        const query = req.query.message;
-        res.send(query)
-    }catch(e){
+    const query = req.query.message;
+    if(query){
+        res.json({"yourMessage":query})
+    }else{
         res.send("Message required.")
     }
 
